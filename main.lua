@@ -13,7 +13,7 @@ end
 local TEX_MADOTSUKI = get_texture_info("madotsuki-icon")
 local E_MODEL_MADOTSUKI = smlua_model_util_get_id("madotsuki_geo")
 local CT_MADOTSUKI = _G.charSelect.character_add("Madotsuki",
-					    "The dreamer",
+					    "Dreamer",
 					    "player_legend",
 					    {r = 50, g = 100, b = 255},
 					    E_MODEL_MADOTSUKI,
@@ -22,14 +22,25 @@ local CT_MADOTSUKI = _G.charSelect.character_add("Madotsuki",
 
 local TEX_MONOKO = get_texture_info("monoko-icon")
 local E_MODEL_MONOKO = smlua_model_util_get_id("monoko_geo")
+local E_MODEL_MONOKOEX = smlua_model_util_get_id("monokoex_geo")
 local CT_MONOKO = _G.charSelect.character_add("Monoko",
-					    "The dreamer",
+					    "White desert friend",
 					    "player_legend",
 					    {r = 50, g = 100, b = 255},
 					    E_MODEL_MONOKO,
 					    CT_MARIO,
 					    TEX_MONOKO);
 
+local TEX_MONOKOEX = get_texture_info("monokoex-icon")
+local E_MODEL_MONOKOEX = smlua_model_util_get_id("monokoex_geo")
+local E_MODEL_MONOKOEXEX = smlua_model_util_get_id("monokoex_geo")
+local CT_MONOKOEX = _G.charSelect.character_add("MonokoEX",
+					    "Isekai protagonist",
+					    "player_legend",
+					    {r = 50, g = 100, b = 255},
+					    E_MODEL_MONOKOEX,
+					    CT_MARIO,
+					    TEX_MONOKOEX);
 -- Add Voices
 
 local VOICETABLE_MADOTSUKI = {
@@ -49,7 +60,6 @@ local VOICETABLE_MADOTSUKI = {
    [CHAR_SOUND_OKEY_DOKEY] = 'use.ogg',
    [CHAR_SOUND_ON_FIRE] = 'scream.ogg',
    [CHAR_SOUND_OOOF2] = 'no1.ogg',
-   [CHAR_SOUND_PANTING] = 'mari 1hp.ogg',
    [CHAR_SOUND_PUNCH_HOO] = 'no4.ogg',
    [CHAR_SOUND_PUNCH_WAH] = 'no3.ogg',
    [CHAR_SOUND_PUNCH_YAH] = 'no2.ogg',
@@ -69,7 +79,7 @@ local VOICETABLE_MONOKO = {
    [CHAR_SOUND_ATTACKED] = {'punch3.ogg', 'punch2.ogg', 'punch1.ogg'},
    [CHAR_SOUND_DOH] = {'bump1.ogg','bump1.ogg'},
    [CHAR_SOUND_DROWNING] = 'end.ogg',
-   [CHAR_SOUND_DYING] = 'end.ogg',
+   [CHAR_SOUND_DYING] = 'scream-slow.ogg',
    [CHAR_SOUND_EEUH] = 'use2.ogg',
    [CHAR_SOUND_GROUND_POUND_WAH] = {'jump1.ogg'},
    [CHAR_SOUND_HAHA] = 'ping.ogg',
@@ -80,7 +90,6 @@ local VOICETABLE_MONOKO = {
    [CHAR_SOUND_HOOHOO] = 'effect1.ogg',
    [CHAR_SOUND_ON_FIRE] = 'scream.ogg',
    [CHAR_SOUND_OOOF2] = 'punch1.ogg',
-   [CHAR_SOUND_PANTING] = 'mari 1hp.ogg',
    [CHAR_SOUND_PUNCH_YAH] = {'cancel2.ogg'},
    [CHAR_SOUND_PUNCH_WAH] = {'cancel1.ogg'},
    [CHAR_SOUND_PUNCH_HOO] = {'cancel2.ogg'},
@@ -95,8 +104,7 @@ local VOICETABLE_MONOKO = {
 }
 
 _G.charSelect.character_add_voice(E_MODEL_MONOKO, VOICETABLE_MONOKO)
-
--- Dunno how this stuff is used
+_G.charSelect.character_add_voice(E_MODEL_MONOKOEX, VOICETABLE_MONOKO)
 
 local character_get_voice, update_sound, update_snore = _G.charSelect.character_get_voice, _G.charSelect.voice.sound, _G.charSelect.voice.snore
 local function character_sounds(m, sound)
