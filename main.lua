@@ -1,5 +1,5 @@
 -- name: [CS] Yume Nikki 64
--- description: It's da toe-hoes!\n\n\\#ff7777\\This Pack requires Character Select\nto use as a Library!
+-- description: Yume Nikki!\n\n\\#ff7777\\This Pack requires Character Select\nto use as a Library!
 
 local TEXT_MOD_NAME = "Yume Nikki 64"
 local TEXT_MOD_VERSION = "Release 1"
